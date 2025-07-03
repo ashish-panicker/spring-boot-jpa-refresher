@@ -1,11 +1,10 @@
-package in.stackroute.spring_boot_jpa_refresher.repository;
+package in.stackroute.jpa_refresher.repository;
 
-import in.stackroute.spring_boot_jpa_refresher.model.Product;
+import in.stackroute.jpa_refresher.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 

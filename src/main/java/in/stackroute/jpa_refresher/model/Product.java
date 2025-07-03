@@ -1,4 +1,4 @@
-package in.stackroute.spring_boot_jpa_refresher.model;
+package in.stackroute.jpa_refresher.model;
 
 import jakarta.persistence.*;
 import lombok.*;

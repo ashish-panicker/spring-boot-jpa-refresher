@@ -1,4 +1,4 @@
-package in.stackroute.spring_boot_jpa_refresher;
+package in.stackroute.jpa_refresher;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

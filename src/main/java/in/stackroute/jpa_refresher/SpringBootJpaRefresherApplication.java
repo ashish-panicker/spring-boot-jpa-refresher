@@ -1,13 +1,17 @@
-package in.stackroute.spring_boot_jpa_refresher;
+package in.stackroute.jpa_refresher;
 
-import in.stackroute.spring_boot_jpa_refresher.model.Product;
-import in.stackroute.spring_boot_jpa_refresher.repository.ProductRepository;
+import in.stackroute.jpa_refresher.model.Product;
+import in.stackroute.jpa_refresher.model.one2one.Profile;
+import in.stackroute.jpa_refresher.model.one2one.User;
+import in.stackroute.jpa_refresher.repository.ProductRepository;
+import in.stackroute.jpa_refresher.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootApplication
@@ -16,6 +20,16 @@ public class SpringBootJpaRefresherApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootJpaRefresherApplication.class, args);
+	}
+
+//	@Bean
+	public CommandLineRunner runner(UserRepository repository) {
+		return args -> {
+			Profile profile = new Profile(LocalDate.now(),  "8989898989");
+			User user = new User("ashish", profile);
+			repository.save(user);
+			repository.findAll().forEach(System.out::println);
+		};
 	}
 
 //	@Bean
