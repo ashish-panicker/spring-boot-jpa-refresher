@@ -18,7 +18,7 @@ public class SpringBootJpaRefresherApplication {
 		SpringApplication.run(SpringBootJpaRefresherApplication.class, args);
 	}
 
-	@Bean
+//	@Bean
 	public CommandLineRunner runner(ProductRepository repository) {
 		return  args -> {
 			log.info("Deleting all products");
